@@ -54,7 +54,7 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
     <Routes>
-    <Route path="/about" element={<About />} />
+    <Route path="/about" element={<About mode={mode}/>} />
 </Routes>
 <Routes>
     <Route path="/" element={<TextForm
@@ -71,3 +71,7 @@ function App() {
 
 export default App ;
 
+//for deployment create a repo and add local files in it
+//search for deployment of create react app
+//search github pages
+//follow the step
