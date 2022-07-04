@@ -56,7 +56,7 @@ export default function TextForm(props) {
    </div>
    <div className="container" style = {{color:props.mode==='dark'?'white':'gray'}}>
     <h1>Your text summary</h1>
-    <p>{text.split(" ").filter((element)=>{return element.length !==0}).length} Words and {text.length} Characters</p>
+    <p>{text.split(/\s+/ ).filter((element)=>{return element.length !==0}).length} Words and {text.length} Characters</p>
     
     <p>{0.008*text.split(" ").filter((element)=>{return element.length !==0}).length} Minutes Read</p>
     <h2>Preview</h2>
@@ -68,3 +68,4 @@ export default function TextForm(props) {
 }
 //here filter method solve the the count of empty space as a string
 //  document.getSelection().removeAllRanges(); is used to deselect the default property of copy function
+//text.split(/\s+/ ) here \s means space + new line

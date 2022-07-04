@@ -6,12 +6,7 @@ import { useState } from "react";
 import Alert from "./component/Alert";
 import About from "./component/About";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -44,8 +39,8 @@ function App() {
   };
   return (
     <>
-    <Router>
-    <Navbar
+      <Router>
+        <Navbar
           title="TextUtils"
           mode={mode}
           toggleMode={toggleMode}
@@ -53,25 +48,25 @@ function App() {
         />
         <Alert alert={alert} />
         <div className="container my-3">
-    <Routes>
-    <Route path="/about" element={<About mode={mode}/>} />
-</Routes>
-<Routes>
-    <Route path="/" element={<TextForm
-                heading="Enter The Text To Analyze"
-                showAlert={showAlert}
-              />} />
-</Routes>
-</div>
-</Router>
-     
+          <Routes>
+            <Route path="/about" element={<About mode={mode} />} />
+          </Routes>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter The Text To Analyze"
+                  showAlert={showAlert}
+                />
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
 
-export default App ;
+export default App;
 
-//for deployment create a repo and add local files in it
-//search for deployment of create react app
-//search github pages
-//follow the step
